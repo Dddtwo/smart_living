@@ -1,29 +1,32 @@
-# smart_living
-Smart Living 是一款现代化的智能家居控制平台，支持多端运行（微信小程序、H5、App），致力于打造便捷的智能家居控制体验。
-功能点
+Smart Home Mini Program Features Overview
 
-1. 智能化控制
+Project Overview
 
-用户可以通过小程序远程控制家中的各种智能设备，如灯光、空调、电视、窗帘等。不仅可以进行开关控制，还可以进行更精细的调节，如调整灯光的亮度、色温，设置空调的温度、风速等。
+This project is developed based on uni-app, designed for WeChat Mini Programs, and built using Vue3. This project does not rely on a backend, and all data is simulated to ensure a lightweight and efficient experience.
 
-2. 场景设置
+Features
 
-用户可以根据需要自定义不同的场景模式，如“观影模式”、“睡眠模式”、“聚会模式”等。在每个模式下，小程序会自动调整相关的家居设备，以营造出符合该场景的氛围。
+1. Intelligent Control
 
-3. 环境感知
+Users can remotely control various smart devices in their homes through the mini program, such as lights, air conditioners, TVs, and curtains. In addition to basic on/off control, users can make finer adjustments, such as adjusting the brightness and color temperature of lights or setting the temperature and fan speed of air conditioners.
 
-小程序可以实时感知家庭环境参数，如温度、湿度、光照等。根据这些参数，小程序可以自动调节家居设备，如自动调节空调温度、湿度，自动开启或关闭灯光等。
+2. Scene Settings
 
-4. 设备管理
+Users can customize different scene modes according to their needs, such as "Movie Mode," "Sleep Mode," and "Party Mode." In each mode, the mini program will automatically adjust related home devices to create an atmosphere that matches the scene.
 
-用户可以通过小程序发现新的智能设备，并进行绑定。同时，用户可以删除不再使用的设备，或更改设备的基本信息，如名称、分组等，以便更好地管理家居设备。
+3. Environmental Awareness
 
-5. 信息反馈
+The mini program can sense home environment parameters in real-time, such as temperature, humidity, and lighting. Based on these parameters, the mini program can automatically adjust home devices, such as regulating air conditioner temperature and humidity or automatically turning lights on and off.
 
-小程序可以将家中智能设备运行状态的各项数据实时反馈到用户的手机上，使用户能够随时了解设备的运行情况。同时，当设备出现异常情况时，小程序会及时发送报警信息，提醒用户进行处理。
+4. Device Management
 
-结论
+Users can discover new smart devices through the mini program and bind them. Additionally, users can delete devices they no longer use or modify basic device information, such as names and groupings, for better management of home devices.
 
-本小程序通过智能化控制、场景设定、环境感知、设备管理和信息反馈等核心功能，为用户提供更便捷、安全、高效的智能家居体验。
+5. Information Feedback
 
+The mini program can provide real-time feedback on the operational status of smart home devices directly to the user's phone, allowing users to monitor their devices at any time. Additionally, if a device encounters an abnormal situation, the mini program will promptly send an alert notification to remind the user to take action.
+
+Conclusion
+
+This mini program enhances the smart home experience through intelligent control, scene settings, environmental awareness, device management, and information feedback, providing users with a more convenient, secure, and efficient smart home system.
 
