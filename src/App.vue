@@ -25,6 +25,15 @@
 		--text-secondary: #666666;
 		--border-color: #E0E0E0;
 		--card-shadow: 0 2px 4px rgba(25, 118, 210, 0.1);
+
+		/* Control Variables */
+		--control-height: 88rpx;
+		--control-border-radius: 44rpx;
+		--slider-height: 4rpx;
+		--slider-thumb-size: 28rpx;
+		--control-spacing: 24rpx;
+		--control-padding: 32rpx;
+		--picker-height: 80rpx;
 	}
 
 	/* Global Styles */

@@ -5,13 +5,30 @@
       <text :class="['device-status', `status-${device.status}`]">{{ device.status }}</text>
       <text class="device-room">{{ device.room }}</text>
     </view>
-    <view class="device-capabilities">
-      <text v-if="device.type === DEVICE_TYPES.LIGHT">
-        Brightness: {{ device.capabilities.brightness }}%
-      </text>
-      <text v-if="device.type === DEVICE_TYPES.AC">
-        Temperature: {{ device.capabilities.temperature }}°C
-      </text>
+    <view class="device-controls">
+      <template v-if="device.status === DEVICE_STATUS.ONLINE">
+        <light-controls
+          v-if="device.type === DEVICE_TYPES.LIGHT"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+        <ac-controls
+          v-else-if="device.type === DEVICE_TYPES.AC"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+        <tv-controls
+          v-else-if="device.type === DEVICE_TYPES.TV"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+        <curtain-controls
+          v-else-if="device.type === DEVICE_TYPES.CURTAIN"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+      </template>
+      <text v-else class="offline-text">Device is offline</text>
     </view>
     <view class="device-actions">
       <button class="edit-btn" @click="emit('edit', device)">Edit</button>
@@ -21,7 +38,12 @@
 </template>
 
 <script setup>
-import { DEVICE_TYPES } from '@/utils/deviceTypes'
+import { DEVICE_TYPES, DEVICE_STATUS } from '@/utils/deviceTypes'
+import { useDeviceStore } from '@/store/device'
+import LightControls from '../controls/LightControls.vue'
+import ACControls from '../controls/ACControls.vue'
+import TVControls from '../controls/TVControls.vue'
+import CurtainControls from '../controls/CurtainControls.vue'
 
 const props = defineProps({
   device: {
@@ -31,6 +53,15 @@ const props = defineProps({
 })
 
 const emit = defineEmits(['edit', 'delete'])
+
+const deviceStore = useDeviceStore()
+
+const updateCapabilities = async (capabilities) => {
+  await deviceStore.updateDevice({
+    ...props.device,
+    capabilities
+  })
+}
 </script>
 
 <style>
@@ -82,12 +113,17 @@ const emit = defineEmits(['edit', 'delete'])
   color: var(--text-secondary);
 }
 
-.device-capabilities {
-  font-size: 28rpx;
-  color: var(--text-secondary);
-  padding: 16rpx;
+.device-controls {
   background-color: var(--primary-bg);
   border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.offline-text {
+  padding: 32rpx;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 28rpx;
 }
 
 .device-actions {
