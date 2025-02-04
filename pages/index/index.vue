@@ -1,26 +1,20 @@
 <template>
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
+		<view class="menu-area">
+			<button class="menu-button" @click="navigateToDevices">
+				Device Management
+			</button>
 		</view>
 	</view>
 </template>
 
-<script>
-	export default {
-		data() {
-			return {
-				title: 'Hello'
-			}
-		},
-		onLoad() {
-
-		},
-		methods: {
-
-		}
-	}
+<script setup>
+const navigateToDevices = () => {
+	uni.navigateTo({
+		url: '/pages/device/index'
+	})
+}
 </script>
 
 <style>
