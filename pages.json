@@ -1,9 +1,27 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "Smart Living"
+			}
+		},
+		{
+			"path": "pages/device/index",
+			"style": {
+				"navigationBarTitleText": "Device Management"
+			}
+		},
+		{
+			"path": "pages/device/add",
+			"style": {
+				"navigationBarTitleText": "Add Device"
+			}
+		},
+		{
+			"path": "pages/device/edit",
+			"style": {
+				"navigationBarTitleText": "Edit Device"
 			}
 		}
 	],
