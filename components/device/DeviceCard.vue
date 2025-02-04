@@ -36,25 +36,33 @@ const emit = defineEmits(['edit', 'delete'])
 <style>
 .device-card {
   background-color: #ffffff;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 8px;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin: 16rpx;
   box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
 }
 
 .device-info {
-  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16rpx;
 }
 
 .device-name {
-  font-size: 16px;
+  font-size: 32rpx;
   font-weight: bold;
   color: var(--text-primary);
 }
 
 .device-status {
-  font-size: 14px;
-  margin-left: 8px;
+  font-size: 28rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 32rpx;
+  background-color: var(--primary-bg);
 }
 
 .status-online {
@@ -70,27 +78,30 @@ const emit = defineEmits(['edit', 'delete'])
 }
 
 .device-room {
-  font-size: 14px;
+  font-size: 28rpx;
   color: var(--text-secondary);
-  margin-left: 8px;
 }
 
 .device-capabilities {
-  margin: 8px 0;
-  font-size: 14px;
+  font-size: 28rpx;
   color: var(--text-secondary);
+  padding: 16rpx;
+  background-color: var(--primary-bg);
+  border-radius: 12rpx;
 }
 
 .device-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 16rpx;
 }
 
 .edit-btn, .delete-btn {
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 16rpx 32rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  min-width: 160rpx;
+  text-align: center;
 }
 
 .edit-btn {
