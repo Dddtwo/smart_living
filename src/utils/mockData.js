@@ -26,10 +26,10 @@ export const DEFAULT_CAPABILITIES = {
 export const mockDevices = [
   {
     id: '1',
-    name: 'Living Room Light',
+    name: '客厅灯',
     type: DEVICE_TYPES.LIGHT,
     status: DEVICE_STATUS.ONLINE,
-    room: 'Living Room',
+    room: '客厅',
     capabilities: {
       power: true,
       brightness: 80,
@@ -38,10 +38,10 @@ export const mockDevices = [
   },
   {
     id: '2',
-    name: 'Bedroom AC',
+    name: '卧室空调',
     type: DEVICE_TYPES.AC,
     status: DEVICE_STATUS.ONLINE,
-    room: 'Bedroom',
+    room: '卧室',
     capabilities: {
       power: true,
       temperature: 24,
@@ -51,10 +51,10 @@ export const mockDevices = [
   },
   {
     id: '3',
-    name: 'Living Room TV',
+    name: '客厅电视',
     type: DEVICE_TYPES.TV,
     status: DEVICE_STATUS.OFFLINE,
-    room: 'Living Room',
+    room: '客厅',
     capabilities: {
       power: false,
       volume: 30,
@@ -63,10 +63,10 @@ export const mockDevices = [
   },
   {
     id: '4',
-    name: 'Bedroom Curtain',
+    name: '卧室窗帘',
     type: DEVICE_TYPES.CURTAIN,
     status: DEVICE_STATUS.ONLINE,
-    room: 'Bedroom',
+    room: '卧室',
     capabilities: {
       position: 100,
       stop: false
@@ -74,10 +74,10 @@ export const mockDevices = [
   },
   {
     id: '5',
-    name: 'Kitchen Light',
+    name: '厨房灯',
     type: DEVICE_TYPES.LIGHT,
     status: DEVICE_STATUS.ONLINE,
-    room: 'Kitchen',
+    room: '厨房',
     capabilities: {
       power: true,
       brightness: 100,
