@@ -56,6 +56,7 @@ const updateCapabilities = async (capabilities) => {
     ...props.device,
     capabilities
   })
+}
 </script>
 
 <style>
