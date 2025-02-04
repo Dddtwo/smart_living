@@ -2,16 +2,17 @@
   <view class="curtain-controls">
     <range-slider
       v-model="capabilities.position"
-      label="Position"
+      :label="t('controls.curtain.position')"
       unit="%"
       @update:modelValue="updateCapability('position', $event)"
     />
-    <button class="stop-btn" @click="stopCurtain">Stop</button>
+    <button class="stop-btn" @click="stopCurtain">{{ t('controls.curtain.stop') }}</button>
   </view>
 </template>
 
 <script setup>
 import RangeSlider from './RangeSlider.vue'
+import { t } from '@/utils/i18n'
 
 const props = defineProps({
   capabilities: {

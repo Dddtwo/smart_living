@@ -3,13 +3,13 @@
     <power-toggle v-model="capabilities.power" @update:modelValue="updateCapability('power', $event)" />
     <range-slider
       v-model="capabilities.brightness"
-      label="Brightness"
+      :label="t('controls.light.brightness')"
       unit="%"
       @update:modelValue="updateCapability('brightness', $event)"
     />
     <range-slider
       v-model="capabilities.color_temperature"
-      label="Color Temperature"
+      :label="t('controls.light.colorTemp')"
       :min="2700"
       :max="6500"
       :step="100"
@@ -22,6 +22,7 @@
 <script setup>
 import PowerToggle from './PowerToggle.vue'
 import RangeSlider from './RangeSlider.vue'
+import { t } from '@/utils/i18n'
 
 const props = defineProps({
   capabilities: {

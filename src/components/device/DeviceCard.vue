@@ -2,7 +2,7 @@
   <view class="device-card">
     <view class="device-info">
       <text class="device-name">{{ device.name }}</text>
-      <text :class="['device-status', `status-${device.status}`]">{{ device.status }}</text>
+      <text :class="['device-status', `status-${device.status}`]">{{ t(`device.status.${device.status}`) }}</text>
       <text class="device-room">{{ device.room }}</text>
     </view>
     <view class="device-controls">
@@ -28,17 +28,18 @@
           @update="updateCapabilities"
         />
       </template>
-      <text v-else class="offline-text">Device is offline</text>
+      <text v-else class="offline-text">{{ t('device.status.offline') }}</text>
     </view>
     <view class="device-actions">
-      <button class="edit-btn" @click="emit('edit', device)">Edit</button>
-      <button class="delete-btn" @click="emit('delete', device.id)">Delete</button>
+      <button class="edit-btn" @click="emit('edit', device)">{{ t('device.edit') }}</button>
+      <button class="delete-btn" @click="emit('delete', device.id)">{{ t('device.delete') }}</button>
     </view>
   </view>
 </template>
 
 <script setup>
 import { DEVICE_TYPES, DEVICE_STATUS } from '@/utils/deviceTypes'
+import { t } from '@/utils/i18n'
 import { useDeviceStore } from '@/store/device'
 import LightControls from '../controls/LightControls.vue'
 import ACControls from '../controls/ACControls.vue'

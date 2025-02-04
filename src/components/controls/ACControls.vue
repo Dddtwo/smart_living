@@ -3,32 +3,32 @@
     <power-toggle v-model="capabilities.power" @update:modelValue="updateCapability('power', $event)" />
     <range-slider
       v-model="capabilities.temperature"
-      label="Temperature"
+      :label="t('controls.ac.temperature')"
       :min="16"
       :max="30"
       unit="°C"
       @update:modelValue="updateCapability('temperature', $event)"
     />
     <view class="control-group">
-      <text class="group-label">Mode</text>
+      <text class="group-label">{{ t('controls.ac.mode') }}</text>
       <picker
         :value="modeIndex"
         :range="modes"
         @change="onModeChange"
         class="picker"
       >
-        <view class="picker-text">{{ capabilities.mode }}</view>
+        <view class="picker-text">{{ getLocalizedMode(capabilities.mode) }}</view>
       </picker>
     </view>
     <view class="control-group">
-      <text class="group-label">Fan Speed</text>
+      <text class="group-label">{{ t('controls.ac.fanSpeed') }}</text>
       <picker
         :value="fanSpeedIndex"
         :range="fanSpeeds"
         @change="onFanSpeedChange"
         class="picker"
       >
-        <view class="picker-text">{{ capabilities.fan_speed }}</view>
+        <view class="picker-text">{{ getLocalizedFanSpeed(capabilities.fan_speed) }}</view>
       </picker>
     </view>
   </view>
@@ -38,9 +38,13 @@
 import { computed } from 'vue'
 import PowerToggle from './PowerToggle.vue'
 import RangeSlider from './RangeSlider.vue'
+import { t } from '@/utils/i18n'
 
 const modes = ['cool', 'heat', 'auto', 'fan']
 const fanSpeeds = ['low', 'medium', 'high', 'auto']
+
+const getLocalizedMode = (mode) => t(`controls.ac.modes.${mode}`)
+const getLocalizedFanSpeed = (speed) => t(`controls.ac.speeds.${speed}`)
 
 const props = defineProps({
   capabilities: {

@@ -3,13 +3,13 @@
     <power-toggle v-model="capabilities.power" @update:modelValue="updateCapability('power', $event)" />
     <range-slider
       v-model="capabilities.volume"
-      label="Volume"
+      :label="t('controls.tv.volume')"
       :min="0"
       :max="100"
       @update:modelValue="updateCapability('volume', $event)"
     />
     <view class="channel-control">
-      <text class="channel-label">Channel</text>
+      <text class="channel-label">{{ t('controls.tv.channel') }}</text>
       <view class="channel-buttons">
         <button class="channel-btn" @click="changeChannel(-1)">-</button>
         <text class="channel-number">{{ capabilities.channel }}</text>
@@ -22,6 +22,7 @@
 <script setup>
 import PowerToggle from './PowerToggle.vue'
 import RangeSlider from './RangeSlider.vue'
+import { t } from '@/utils/i18n'
 
 const props = defineProps({
   capabilities: {

@@ -4,12 +4,14 @@
       :class="['toggle-btn', { 'active': modelValue }]"
       @click="$emit('update:modelValue', !modelValue)"
     >
-      {{ modelValue ? 'ON' : 'OFF' }}
+      {{ modelValue ? t('controls.power.on') : t('controls.power.off') }}
     </button>
   </view>
 </template>
 
 <script setup>
+import { t } from '@/utils/i18n'
+
 defineProps({
   modelValue: {
     type: Boolean,
