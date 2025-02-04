@@ -6,12 +6,28 @@
       <text class="device-room">{{ device.room }}</text>
     </view>
     <view class="device-controls">
-      <component
-        :is="controlComponent"
-        v-if="device.status === DEVICE_STATUS.ONLINE"
-        :capabilities="device.capabilities"
-        @update="updateCapabilities"
-      />
+      <template v-if="device.status === DEVICE_STATUS.ONLINE">
+        <light-controls
+          v-if="device.type === DEVICE_TYPES.LIGHT"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+        <ac-controls
+          v-else-if="device.type === DEVICE_TYPES.AC"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+        <tv-controls
+          v-else-if="device.type === DEVICE_TYPES.TV"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+        <curtain-controls
+          v-else-if="device.type === DEVICE_TYPES.CURTAIN"
+          :capabilities="device.capabilities"
+          @update="updateCapabilities"
+        />
+      </template>
       <text v-else class="offline-text">Device is offline</text>
     </view>
     <view class="device-actions">
@@ -22,7 +38,6 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { DEVICE_TYPES, DEVICE_STATUS } from '@/utils/deviceTypes'
 import { useDeviceStore } from '@/store/device'
 import LightControls from '../controls/LightControls.vue'
@@ -40,16 +55,6 @@ const props = defineProps({
 const emit = defineEmits(['edit', 'delete'])
 
 const deviceStore = useDeviceStore()
-
-const controlComponent = computed(() => {
-  const componentMap = {
-    [DEVICE_TYPES.LIGHT]: LightControls,
-    [DEVICE_TYPES.AC]: ACControls,
-    [DEVICE_TYPES.TV]: TVControls,
-    [DEVICE_TYPES.CURTAIN]: CurtainControls
-  }
-  return componentMap[props.device.type]
-})
 
 const updateCapabilities = async (capabilities) => {
   await deviceStore.updateDevice({
