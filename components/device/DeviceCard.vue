@@ -39,7 +39,7 @@ const emit = defineEmits(['edit', 'delete'])
   border-radius: 8px;
   padding: 16px;
   margin: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
 }
 
 .device-info {
@@ -49,6 +49,7 @@ const emit = defineEmits(['edit', 'delete'])
 .device-name {
   font-size: 16px;
   font-weight: bold;
+  color: var(--text-primary);
 }
 
 .device-status {
@@ -57,27 +58,27 @@ const emit = defineEmits(['edit', 'delete'])
 }
 
 .status-online {
-  color: #4CAF50;
+  color: var(--success-color);
 }
 
 .status-offline {
-  color: #9E9E9E;
+  color: var(--text-secondary);
 }
 
 .status-error {
-  color: #F44336;
+  color: var(--error-color);
 }
 
 .device-room {
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
   margin-left: 8px;
 }
 
 .device-capabilities {
   margin: 8px 0;
   font-size: 14px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .device-actions {
@@ -93,12 +94,12 @@ const emit = defineEmits(['edit', 'delete'])
 }
 
 .edit-btn {
-  background-color: #2196F3;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .delete-btn {
-  background-color: #F44336;
+  background-color: var(--error-color);
   color: white;
 }
 </style>

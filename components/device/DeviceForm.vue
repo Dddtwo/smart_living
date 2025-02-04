@@ -99,6 +99,7 @@ const onSubmit = () => {
 <style>
 .device-form {
   padding: 16px;
+  background-color: #ffffff;
 }
 
 .form-group {
@@ -108,7 +109,7 @@ const onSubmit = () => {
 .label {
   display: block;
   font-size: 14px;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 8px;
 }
 
@@ -116,15 +117,16 @@ const onSubmit = () => {
   width: 100%;
   height: 40px;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
   font-size: 14px;
+  color: var(--text-primary);
 }
 
 .picker {
   width: 100%;
   height: 40px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 4px;
 }
 
@@ -132,12 +134,13 @@ const onSubmit = () => {
   line-height: 40px;
   padding: 0 8px;
   font-size: 14px;
+  color: var(--text-primary);
 }
 
 .submit-btn {
   width: 100%;
   height: 44px;
-  background-color: #2196F3;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 4px;
   font-size: 16px;
@@ -145,6 +148,6 @@ const onSubmit = () => {
 }
 
 .submit-btn[disabled] {
-  background-color: #ccc;
+  background-color: var(--text-secondary);
 }
 </style>

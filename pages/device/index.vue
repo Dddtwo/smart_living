@@ -20,7 +20,7 @@ const navigateToAdd = () => {
 <style>
 .device-management {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: var(--primary-bg);
 }
 
 .add-device {
@@ -34,10 +34,14 @@ const navigateToAdd = () => {
 .add-btn {
   width: 100%;
   height: 44px;
-  background-color: #2196F3;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 22px;
   font-size: 16px;
-  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+  box-shadow: var(--card-shadow);
+}
+
+.add-btn:active {
+  background-color: var(--primary-dark);
 }
 </style>
