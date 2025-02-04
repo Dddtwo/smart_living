@@ -23,24 +23,37 @@ const navigateToDevices = () => {
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		min-height: 100vh;
+		background-color: var(--primary-bg);
+		padding: 32rpx;
 	}
 
 	.logo {
 		height: 200rpx;
 		width: 200rpx;
 		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
+		margin-bottom: 100rpx;
 	}
 
-	.text-area {
+	.menu-area {
+		width: 100%;
+		padding: 0 32rpx;
+	}
+
+	.menu-button {
+		width: 100%;
+		height: 88rpx;
+		background-color: var(--primary-color);
+		color: white;
+		border-radius: 44rpx;
+		font-size: 32rpx;
+		box-shadow: var(--card-shadow);
 		display: flex;
+		align-items: center;
 		justify-content: center;
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.menu-button:active {
+		background-color: var(--primary-dark);
 	}
 </style>

@@ -98,53 +98,67 @@ const onSubmit = () => {
 
 <style>
 .device-form {
-  padding: 16px;
+  padding: 32rpx;
+  background-color: #ffffff;
+  max-width: 800rpx;
+  margin: 0 auto;
+  border-radius: 16rpx;
+  box-shadow: var(--card-shadow);
 }
 
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 32rpx;
 }
 
 .label {
   display: block;
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 8px;
+  font-size: 28rpx;
+  color: var(--text-primary);
+  margin-bottom: 16rpx;
 }
 
 .input {
   width: 100%;
-  height: 40px;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
+  height: 80rpx;
+  padding: 0 24rpx;
+  border: 2rpx solid var(--border-color);
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  color: var(--text-primary);
 }
 
 .picker {
   width: 100%;
-  height: 40px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  height: 80rpx;
+  border: 2rpx solid var(--border-color);
+  border-radius: 8rpx;
 }
 
 .picker-text {
-  line-height: 40px;
-  padding: 0 8px;
-  font-size: 14px;
+  line-height: 80rpx;
+  padding: 0 24rpx;
+  font-size: 28rpx;
+  color: var(--text-primary);
 }
 
 .submit-btn {
   width: 100%;
-  height: 44px;
-  background-color: #2196F3;
+  height: 88rpx;
+  background-color: var(--primary-color);
   color: white;
-  border-radius: 4px;
-  font-size: 16px;
-  margin-top: 24px;
+  border-radius: 44rpx;
+  font-size: 32rpx;
+  margin-top: 48rpx;
 }
 
 .submit-btn[disabled] {
-  background-color: #ccc;
+  background-color: var(--text-secondary);
+}
+
+@media screen and (min-width: 768px) {
+  .device-form {
+    margin-top: 48rpx;
+    padding: 48rpx;
+  }
 }
 </style>

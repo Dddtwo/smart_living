@@ -56,16 +56,28 @@ onMounted(() => {
 
 <style>
 .device-list {
-  padding: 16px;
+  padding: 32rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
 }
 
 .loading, .error, .empty {
   text-align: center;
-  padding: 24px;
-  color: #666;
+  padding: 48rpx;
+  color: var(--text-secondary);
+  font-size: 28rpx;
 }
 
 .error {
-  color: #F44336;
+  color: var(--error-color);
+}
+
+@media screen and (min-width: 768px) {
+  .device-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24rpx;
+  }
 }
 </style>

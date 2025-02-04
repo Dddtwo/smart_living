@@ -36,69 +36,81 @@ const emit = defineEmits(['edit', 'delete'])
 <style>
 .device-card {
   background-color: #ffffff;
-  border-radius: 8px;
-  padding: 16px;
-  margin: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin: 16rpx;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
 }
 
 .device-info {
-  margin-bottom: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16rpx;
 }
 
 .device-name {
-  font-size: 16px;
+  font-size: 32rpx;
   font-weight: bold;
+  color: var(--text-primary);
 }
 
 .device-status {
-  font-size: 14px;
-  margin-left: 8px;
+  font-size: 28rpx;
+  padding: 4rpx 16rpx;
+  border-radius: 32rpx;
+  background-color: var(--primary-bg);
 }
 
 .status-online {
-  color: #4CAF50;
+  color: var(--success-color);
 }
 
 .status-offline {
-  color: #9E9E9E;
+  color: var(--text-secondary);
 }
 
 .status-error {
-  color: #F44336;
+  color: var(--error-color);
 }
 
 .device-room {
-  font-size: 14px;
-  color: #666;
-  margin-left: 8px;
+  font-size: 28rpx;
+  color: var(--text-secondary);
 }
 
 .device-capabilities {
-  margin: 8px 0;
-  font-size: 14px;
-  color: #666;
+  font-size: 28rpx;
+  color: var(--text-secondary);
+  padding: 16rpx;
+  background-color: var(--primary-bg);
+  border-radius: 12rpx;
 }
 
 .device-actions {
   display: flex;
   justify-content: flex-end;
-  gap: 8px;
+  gap: 16rpx;
 }
 
 .edit-btn, .delete-btn {
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 14px;
+  padding: 16rpx 32rpx;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  min-width: 160rpx;
+  text-align: center;
 }
 
 .edit-btn {
-  background-color: #2196F3;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .delete-btn {
-  background-color: #F44336;
+  background-color: var(--error-color);
   color: white;
 }
 </style>
